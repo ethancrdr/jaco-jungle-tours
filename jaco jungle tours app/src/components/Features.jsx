@@ -23,6 +23,7 @@ import birdImg from '../assets/tours/bird-watching.jpg';
 import canyoningImg from '../assets/tours/extreme-canyoning.jpg';
 import paddleExpImg from '../assets/tours/paddle exp.webp';
 import cookingClassImg from '../assets/tours/cooking  class.jpg';
+import nocturneHikingImg from '../assets/tours/nocturne hiking.jpg';
 
 const toursData = [
     { id: 'manuel-antonio', price: 100, category: 'nature', image: manuelAntonioImg },
@@ -46,7 +47,7 @@ const toursData = [
     { id: 'surf-lesson', price: 55, category: 'water', image: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&q=80&w=800' },
     { id: 'ocean-hiking', price: 30, category: 'nature', image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=800' },
     { id: 'airport-transfer', price: 90, category: 'other', image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800' },
-    { id: 'night-hiking', price: 60, category: 'adventure', image: 'https://images.unsplash.com/photo-1533240332313-0dbdd31cddad?auto=format&fit=crop&q=80&w=800' }
+    { id: 'night-hiking', price: 60, category: 'adventure', image: nocturneHikingImg }
 ];
 
 export const categories = ['all', 'adventure', 'nature', 'water', 'culture', 'other'];
