@@ -2,42 +2,42 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Clock, Users, Star } from 'lucide-react';
 import BookingModal from './BookingModal';
+import { useTranslation } from 'react-i18next';
 
 import atvWaterfallImg from '../assets/tours/atv-waterfall.jpg';
 import islaTortugaImg from '../assets/tours/isla-tortuga.jpg';
 
-const tours = [
+const toursData = [
     {
         id: 1,
-        title: "Paseo al Atardecer",
         image: "https://images.unsplash.com/photo-1598974357801-cbca100e65d3?q=80&w=2574&auto=format&fit=crop",
-        duration: "2 Horas",
         price: "$70",
         rating: 5.0,
-        description: "Observa cómo el sol se hunde en el horizonte mientras cabalgas por las playas vírgenes de Jacó. Una experiencia romántica y pacífica.",
     },
     {
         id: 2,
-        title: "ATV Waterfall Adventure",
         image: atvWaterfallImg,
-        duration: "3 Horas",
         price: "$110",
         rating: 4.9,
-        description: "Conduce tu propio ATV a través de la selva hasta impresionantes cataratas. Adrenalina y naturaleza en un solo tour.",
     },
     {
         id: 3,
-        title: "Isla Tortuga Catamarán",
         image: islaTortugaImg,
-        duration: "Día Completo",
         price: "$158",
         rating: 5.0,
-        description: "Navega hacia el paraíso. Playas de arena blanca, aguas turquesas, snorkel y comida incluida en este tour de todo el día.",
     },
 ];
 
 const TourCards = () => {
+    const { t } = useTranslation();
     const [selectedTour, setSelectedTour] = useState(null);
+
+    const tours = toursData.map(tour => ({
+        ...tour,
+        title: t(`tourCards.tours.${tour.id}.title`),
+        duration: t(`tourCards.tours.${tour.id}.duration`),
+        description: t(`tourCards.tours.${tour.id}.description`),
+    }));
 
     return (
         <section id="tours" className="py-20 bg-gray-50">
@@ -49,10 +49,10 @@ const TourCards = () => {
                         viewport={{ once: true }}
                         className="text-4xl font-display font-bold text-gray-900 mb-4"
                     >
-                        Elige Tu Aventura
+                        {t('tourCards.title')}
                     </motion.h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
-                        Ya sea que busques un paseo relajante en la playa o una emocionante caminata en la selva, tenemos el tour a caballo perfecto para ti.
+                        {t('tourCards.subtitle')}
                     </p>
                 </div>
 
@@ -75,7 +75,7 @@ const TourCards = () => {
                                 />
                                 {tour.rating >= 5.0 && (
                                     <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider shadow-sm text-gray-900 border border-gray-100">
-                                        Más Popular
+                                        {t('tourCards.most_popular')}
                                     </div>
                                 )}
                             </div>
@@ -103,19 +103,19 @@ const TourCards = () => {
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <Users size={16} />
-                                        <span>Grupos Pequeños</span>
+                                        <span>{t('tourCards.small_groups')}</span>
                                     </div>
                                 </div>
 
                                 <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-50">
                                     <div className="flex flex-col">
-                                        <span className="text-xs text-gray-400 font-medium">Por persona</span>
+                                        <span className="text-xs text-gray-400 font-medium">{t('tourCards.per_person')}</span>
                                         <span className="text-2xl font-display font-bold text-gray-900">{tour.price}</span>
                                     </div>
                                     <button
                                         className="px-6 py-3 rounded-xl bg-gray-900 text-white font-bold hover:bg-gray-800 transition-all text-sm"
                                     >
-                                        Reservar
+                                        {t('tourCards.book_btn')}
                                     </button>
                                 </div>
                             </div>

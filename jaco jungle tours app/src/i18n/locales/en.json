@@ -1,0 +1,253 @@
+{
+    "nav": {
+        "home": "Home",
+        "tours": "Tours",
+        "testimonials": "Experience",
+        "contact": "Contact",
+        "book": "Book Now"
+    },
+    "hero": {
+        "tagline": "Your Adventure Starts Here",
+        "title_start": "Discover",
+        "title_end": "The Unexplored.",
+        "subtitle": "From the adrenaline of rapids and ATVs to the serenity of our beaches and mountains. JacoTours is your gateway to the real Costa Rica.",
+        "cta_tours": "View All Tours",
+        "cta_contact": "Contact Guide",
+        "badge_safe": "Safe Adventures",
+        "badge_transport": "Transport Included",
+        "badge_price": "Best Prices"
+    },
+    "features": {
+        "header": {
+            "subtitle": "Discover Costa Rica",
+            "title": "Unforgettable Tours & Activities",
+            "description": "Choose your next great story. From mountain adrenaline to ocean calm, we have the perfect experience for you."
+        },
+        "categories": {
+            "all": "All",
+            "adventure": "Adventure",
+            "nature": "Nature",
+            "water": "Water",
+            "culture": "Culture",
+            "other": "Other"
+        },
+        "card": {
+            "price": "Price",
+            "book_aria": "Book"
+        },
+        "footer": {
+            "note": "* Prices subject to change. Contact us for large groups or custom packages."
+        }
+    },
+    "tours": {
+        "manuel-antonio": {
+            "name": "Manuel Antonio National Park Tour",
+            "duration": "≈ 5 Hours",
+            "description": "Explore one of the most beautiful national parks in the world.",
+            "longDescription": "Explore one of Costa Rica’s most famous national parks on a guided tour lasting approximately five hours. Walk through lush rainforest trails while spotting wildlife such as monkeys, sloths, and colorful birds. Enjoy breathtaking ocean viewpoints and relax on beautiful white-sand beaches. This tour offers the perfect combination of nature, wildlife, and coastal beauty."
+        },
+        "waterfall": {
+            "name": "Waterfall Adventure Tour",
+            "duration": "2–3 Hours",
+            "description": "Hike and swim in hidden waterfalls.",
+            "longDescription": "Enjoy an exciting waterfall adventure that takes you into the heart of Costa Rica’s lush nature. This 2–3 hour tour includes a scenic walk to a beautiful waterfall where you can swim in refreshing natural pools or experience the thrill of safely jumping into the water. Surrounded by tropical rainforest, this tour offers the perfect balance of adventure, fun, and relaxation."
+        },
+        "monkey-tour": {
+            "name": "Monkey Mangrove Boat Tour",
+            "duration": "3 Hours",
+            "description": "Close encounter with local wildlife.",
+            "longDescription": "Enjoy a relaxing three-hour boat tour through peaceful mangrove canals and discover one of Costa Rica’s most unique ecosystems. Observe monkeys, tropical birds, and other wildlife in their natural habitat while gliding through calm waters surrounded by lush mangroves. This guided tour offers a perfect blend of nature, wildlife, and education."
+        },
+        "zipline": {
+            "name": "Zipline Canopy Tour",
+            "duration": "1 Hour 30 Minutes",
+            "description": "Pure adrenaline flying over the treetops.",
+            "longDescription": "Soar through the treetops on an exciting zipline canopy tour surrounded by lush tropical rainforest. During this 1 hour and 30 minute experience, enjoy breathtaking views, fresh jungle air, and a safe, guided adventure high above the forest. This tour is perfect for anyone looking to combine nature, adrenaline, and unforgettable scenery in a short and thrilling experience."
+        },
+        "paragliding": {
+            "name": "Paragliding Experience Tour",
+            "duration": "15-30 Minutes",
+            "description": "Fly high and enjoy incomparable panoramic views.",
+            "longDescription": "Experience the thrill of flying as you soar through the sky on an unforgettable paragliding adventure. Flights last between 15 and 30 minutes, reaching heights of approximately 300 to 500 meters, offering breathtaking panoramic views of the coastline, mountains, and lush landscapes below. This safe and guided experience is perfect for first-time flyers and adventure lovers alike."
+        },
+        "crocodile": {
+            "name": "Crocodile River Tour",
+            "duration": "1–1.5 Hours",
+            "description": "Safe adventure observing crocodiles in their habitat.",
+            "longDescription": "Enjoy an exciting and educational crocodile river tour lasting between one and one and a half hours. Cruise along a tropical river surrounded by mangroves while observing impressive crocodiles and other wildlife in their natural habitat. Led by experienced guides, this safe boat tour offers a unique opportunity to learn about local ecosystems, crocodile behavior, and conservation."
+        },
+        "horseback": {
+            "name": "Forest & Beach Horseback Riding Tour",
+            "duration": "1–1.5 Hours",
+            "description": "Our star tour at sunset or in the morning.",
+            "longDescription": "Enjoy a peaceful horseback riding experience through lush tropical forest and along beautiful sandy beaches. This relaxing tour lasts between one and one and a half hours and is perfect for all experience levels. Ride at a comfortable pace, connect with nature, and take in stunning forest scenery and ocean views for an unforgettable outdoor adventure."
+        },
+        "sunset-boat": {
+            "name": "Private Sunset Boat Tour",
+            "duration": "2 Hours",
+            "description": "Luxury and relaxation with an unforgettable sunset at sea.",
+            "longDescription": "Enjoy a relaxing two-hour private sunset boat tour designed for up to six people. Cruise along the coastline, feel the ocean breeze, and watch a breathtaking tropical sunset from the water as the sky fills with vibrant colors. This exclusive experience is perfect for couples, families, or small groups looking to enjoy Costa Rica’s natural beauty in a peaceful and unforgettable way."
+        },
+        "tortuga-public": {
+            "name": "Tortuga Island Boat Tour",
+            "duration": "≈ 5 Hours",
+            "description": "All-inclusive catamaran tour to Tortuga Island.",
+            "longDescription": "Enjoy an unforgettable boat tour to the beautiful Tortuga Island, lasting approximately five hours. Cruise across the ocean, take in stunning coastal views, and arrive at a tropical paradise with white-sand beaches and crystal-clear waters. Relax on the beach, swim in the ocean, or simply enjoy the natural beauty of one of Costa Rica’s most iconic islands. This tour offers the perfect combination of adventure, relaxation, and island scenery."
+        },
+        "jetski": {
+            "name": "Jet Ski Adventure Tour",
+            "duration": "1 Hour",
+            "description": "Speed and excitement breaking the waves.",
+            "longDescription": "Enjoy an exciting one-hour jet ski adventure along Costa Rica’s beautiful coastline. Ride across the open ocean, feel the ocean breeze, and take in stunning coastal views while experiencing the thrill of speed. This guided tour is perfect for those looking for a fun and unforgettable ocean adventure in a short amount of time."
+        },
+        "fishing": {
+            "name": "Private Boat Fishing Tour",
+            "duration": "≈ 4 Hours",
+            "description": "Deep sea sport fishing with professional equipment.",
+            "longDescription": "Enjoy a private boat fishing experience lasting approximately four hours, designed for up to six people. Fish along the beautiful coastline or in open waters while taking in stunning ocean views. This guided tour is perfect for beginners and experienced anglers alike, offering a fun, relaxed, and memorable fishing adventure in Costa Rica."
+        },
+        "atv-2h": {
+            "name": "ATV Adventure Tour",
+            "duration": "2 Hours",
+            "description": "Ride mountain trails and mud on an ATV.",
+            "longDescription": "Get ready for an exciting two-hour ATV adventure through Costa Rica’s stunning natural landscapes. Ride along jungle trails, rivers, and scenic viewpoints while enjoying the thrill of off-road exploration. This guided tour offers the perfect balance of adrenaline, nature, and breathtaking views—ideal for adventure lovers of all experience levels."
+        },
+        "kayak": {
+            "name": "Sea Kayaking Tour",
+            "duration": "≈ 3 Hours",
+            "description": "Paddle quietly exploring the coast.",
+            "longDescription": "Enjoy a peaceful sea kayaking adventure lasting approximately three hours as you paddle along Costa Rica’s beautiful coastline. Explore hidden coves, rocky formations, and calm ocean waters while taking in stunning coastal scenery and marine life. This guided tour offers a perfect balance of relaxation, nature, and adventure."
+        },
+        "snorkel": {
+            "name": "Boat Snorkeling Tour",
+            "duration": "3 Hours",
+            "description": "Discover marine life under crystal clear waters.",
+            "longDescription": "Enjoy a three-hour boat snorkeling adventure along Costa Rica’s beautiful coastline. Travel by boat to the best snorkeling spots, where you’ll explore crystal-clear waters filled with colorful marine life. This guided tour offers a perfect mix of ocean adventure, relaxation, and unforgettable underwater experiences."
+        },
+        "chocolate": {
+            "name": "Chocolate Experience Tour",
+            "duration": "1.5 Hours",
+            "description": "Delicious experience learning about local cacao.",
+            "longDescription": "Discover the rich history and flavors of Costa Rican chocolate on a 1.5-hour immersive experience. Learn about the cacao plant, traditional chocolate-making methods, and its cultural importance. Enjoy tastings of fresh, natural chocolate while connecting with local traditions and flavors in a fun and educational setting."
+        },
+        "canyoning": {
+            "name": "Extreme Rappelling Adventure",
+            "duration": "≈ 2 Hours",
+            "description": "Rappelling and canyon descent for the brave.",
+            "longDescription": "Experience an adrenaline-filled extreme rappelling adventure lasting approximately two hours. Descend vertical rock walls surrounded by breathtaking natural scenery while guided by experienced professionals and using high-quality safety equipment. This tour is perfect for thrill seekers looking to challenge themselves and enjoy Costa Rica’s wild landscapes from a whole new perspective."
+        },
+        "sup-paddle": {
+            "name": "Stand Up Paddle Experience",
+            "duration": "3 to 4 Hours",
+            "description": "Glide across calm waters and connect with nature.",
+            "longDescription": "Glide across calm waters and connect with nature on this Stand Up Paddle adventure, perfect for both beginners and experienced paddlers. During this 3 to 4 hour experience, you’ll explore scenic coastlines, bays, or rivers while enjoying stunning views and a peaceful atmosphere."
+        },
+        "cooking-class": {
+            "name": "Costa Rican Cooking Class",
+            "duration": "2 Hours",
+            "description": "Dive into the flavors of Costa Rica in this hands-on cooking class.",
+            "longDescription": "Dive into the flavors of Costa Rica in this hands-on cooking class designed for food lovers and curious travelers. During this two-hour experience, you’ll learn how to prepare traditional Costa Rican dishes using fresh, local ingredients while discovering the stories and culture behind each recipe. Guided by a local instructor, you’ll cook step by step, learn useful techniques, and enjoy a fun, relaxed atmosphere. At the end of the class, sit down and savor the meal you’ve prepared, just like a true tico. Perfect for families, couples, and small groups, this class is a delicious way to connect with Costa Rican culture through its food."
+        },
+        "surf-lesson": {
+            "name": "Surf Lesson Experience",
+            "duration": "Depends",
+            "description": "Discover surfing in a fun, safe and unforgettable way.",
+            "longDescription": "Feel the thrill of the ocean and experience the pure joy of surfing in one of the best beach destinations. Our surf lessons are designed for all levels, especially beginners, combining fun, safety, and expert instruction. Learn the basics on the sand, then head into the water to catch your first wave with the guidance of certified local instructors. No experience needed—just bring your sense of adventure."
+        },
+        "ocean-hiking": {
+            "name": "Ocean View Hiking Experience",
+            "duration": "3 Hours",
+            "description": "Join us for a rewarding 7-mile hike through coastal trails.",
+            "longDescription": "Experience an unforgettable coastal hike with breathtaking ocean views along the way. This guided hiking adventure covers approximately 7 miles and lasts around 3 hours, offering the perfect balance of physical activity, nature, and stunning scenery."
+        },
+        "airport-transfer": {
+            "name": "Private Airport Transportation",
+            "duration": "1 Hour 30 Minutes",
+            "description": "Travel with ease using our private airport transportation service.",
+            "longDescription": "Enjoy a smooth and stress-free private airport transfer to or from your destination. The journey takes approximately 1 hour and 30 minutes, offering comfort, safety, and personalized service from start to finish. Relax in a clean, air-conditioned vehicle with a professional driver who ensures punctuality and a pleasant ride. Perfect for couples, families, or small groups looking for reliable and hassle-free transportation."
+        },
+        "night-hiking": {
+            "name": "Night River Hiking & Waterfall Tour",
+            "duration": "≈ 3 Hours",
+            "description": "A night hike through the river to a hidden waterfall.",
+            "longDescription": "Experience a unique nighttime adventure as you hike along a river under the stars and explore the rainforest after dark. This guided night hike takes you through shallow river sections where your shoes will get completely wet, adding a fun and immersive element to the journey. Along the way, discover nocturnal wildlife and arrive at a beautiful small waterfall hidden in the jungle. A truly unforgettable nature experience lasting around three hours."
+        }
+    },
+    "booking": {
+        "about": "About this activity",
+        "per_person": "Price per person",
+        "total": "Total Estimated",
+        "people_label": "Number of People",
+        "date_label": "Date",
+        "time_label": "Time",
+        "confirm_btn": "Confirm Booking on WhatsApp",
+        "alert_select": "Please select a date and time.",
+        "msg_tour": "Tour",
+        "msg_people": "People",
+        "msg_date": "Date",
+        "msg_time": "Time",
+        "msg_total": "Total Price",
+        "msg_intro": "Hello, I would like to book the following tour:"
+    },
+    "tourCards": {
+        "title": "Choose Your Adventure",
+        "subtitle": "Whether you are looking for a relaxing beach ride or an exciting jungle trek, we have the perfect horseback riding tour for you.",
+        "most_popular": "Most Popular",
+        "book_btn": "Book Now",
+        "per_person": "Per person",
+        "small_groups": "Small Groups",
+        "tours": {
+            "1": {
+                "title": "Sunset Ride",
+                "duration": "2 Hours",
+                "description": "Watch the sun sink into the horizon as you ride along the pristine beaches of Jaco. A romantic and peaceful experience."
+            },
+            "2": {
+                "title": "ATV Waterfall Adventure",
+                "duration": "3 Hours",
+                "description": "Drive your own ATV through the jungle to stunning waterfalls. Adrenaline and nature in a single tour."
+            },
+            "3": {
+                "title": "Tortuga Island Catamaran",
+                "duration": "Full Day",
+                "description": "Sail to paradise. White sand beaches, turquoise waters, snorkeling, and food included in this full-day tour."
+            }
+        }
+    },
+    "testimonials": {
+        "title": "Guest Reviews",
+        "subtitle": "Discover what our adventurers say",
+        "reviews_count": "{{count}} reviews",
+        "write_review": "Write a Review",
+        "show_more": "Show more reviews",
+        "show_less": "Show less",
+        "ratings": {
+            "exceptional": "Exceptional",
+            "fantastic": "Fantastic",
+            "very_good": "Very Good",
+            "good": "Good",
+            "score": "Score"
+        }
+    },
+    "reviewForm": {
+        "title": "Tell us about your experience!",
+        "subtitle": "Your opinion helps us improve and helps other travelers decide.",
+        "name_label": "Name",
+        "name_placeholder": "Your name",
+        "location_label": "Country / City",
+        "location_optional": "(Optional)",
+        "location_placeholder": "Ex: Costa Rica",
+        "activity_label": "Activity Done",
+        "activity_placeholder": "Select an activity...",
+        "comment_label": "Comment",
+        "comment_placeholder": "What did you like the most?",
+        "submit_btn": "Publish Review"
+    },
+    "footer": {
+        "description": "Creating unforgettable equestrian adventures in Costa Rica since 2010.",
+        "quick_links": "Quick Links",
+        "contact_us": "Contact Us",
+        "view_map": "View on Google Maps",
+        "rights": "All rights reserved."
+    }
+}

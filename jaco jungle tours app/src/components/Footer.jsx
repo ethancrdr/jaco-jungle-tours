@@ -1,7 +1,10 @@
 import React from 'react';
 import { Facebook, Instagram, Phone, Mail, MapPin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+    const { t } = useTranslation();
+
     return (
         <footer id="contact" className="bg-gray-900 text-white py-16">
             <div className="container mx-auto px-6">
@@ -9,10 +12,10 @@ const Footer = () => {
                     {/* Brand */}
                     <div>
                         <h3 className="text-2xl font-display font-bold mb-6">
-                            Jaco<span className="text-brand-500">JungleTours</span>
+                            Jaco<span className="text-brand-500">Tours</span>
                         </h3>
                         <p className="text-gray-400 mb-6">
-                            Creating unforgettable equestrian adventures in Costa Rica since 2010.
+                            {t('footer.description')}
                         </p>
                         <div className="flex gap-4">
                             <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-500 transition-colors">
@@ -26,18 +29,18 @@ const Footer = () => {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="font-bold text-lg mb-6">Quick Links</h4>
+                        <h4 className="font-bold text-lg mb-6">{t('footer.quick_links')}</h4>
                         <ul className="space-y-3 text-gray-400">
-                            <li><a href="#home" className="hover:text-brand-500 transition-colors">Home</a></li>
-                            <li><a href="#tours" className="hover:text-brand-500 transition-colors">Our Tours</a></li>
-                            <li><a href="#experience" className="hover:text-brand-500 transition-colors">The Experience</a></li>
-                            <li><a href="#contact" className="hover:text-brand-500 transition-colors">Contact Us</a></li>
+                            <li><a href="#home" className="hover:text-brand-500 transition-colors">{t('nav.home')}</a></li>
+                            <li><a href="#tours" className="hover:text-brand-500 transition-colors">{t('nav.tours')}</a></li>
+                            <li><a href="#experience" className="hover:text-brand-500 transition-colors">{t('nav.testimonials')}</a></li>
+                            <li><a href="#contact" className="hover:text-brand-500 transition-colors">{t('nav.contact')}</a></li>
                         </ul>
                     </div>
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="font-bold text-lg mb-6">Contact Us</h4>
+                        <h4 className="font-bold text-lg mb-6">{t('footer.contact_us')}</h4>
                         <ul className="space-y-4 text-gray-400">
                             <li className="flex items-start gap-3">
                                 <Phone size={20} className="text-brand-500 mt-1" />
@@ -62,13 +65,13 @@ const Footer = () => {
                             className="w-full h-full object-cover opacity-50"
                         />
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <span className="text-sm font-bold bg-black/50 px-3 py-1 rounded backdrop-blur">View on Google Maps</span>
+                            <span className="text-sm font-bold bg-black/50 px-3 py-1 rounded backdrop-blur">{t('footer.view_map')}</span>
                         </div>
                     </div>
                 </div>
 
                 <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-                    <p>&copy; {new Date().getFullYear()} Jaco Jungle Tours. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} JacoTours. {t('footer.rights')}</p>
                 </div>
             </div>
         </footer>

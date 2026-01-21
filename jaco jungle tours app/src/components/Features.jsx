@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, MapPin, Clock, Tag } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import BookingModal from './BookingModal';
 
 import manuelAntonioImg from '../assets/tours/manuel-antonio.webp';
@@ -20,166 +21,39 @@ import snorkelImg from '../assets/tours/snorkel-tour.jpg';
 import chocolateImg from '../assets/tours/chocolate-tour.webp';
 import birdImg from '../assets/tours/bird-watching.jpg';
 import canyoningImg from '../assets/tours/extreme-canyoning.jpg';
+import paddleExpImg from '../assets/tours/paddle exp.webp';
+import cookingClassImg from '../assets/tours/cooking  class.jpg';
 
-const tours = [
-    {
-        id: 'manuel-antonio',
-        name: 'Manuel Antonio National Park',
-        price: 100,
-        category: 'Naturaleza',
-        image: manuelAntonioImg,
-        description: 'Explora uno de los parques nacionales más bellos del mundo.'
-    },
-    {
-        id: 'waterfall',
-        name: 'Waterfall Tour',
-        price: 70,
-        category: 'Naturaleza',
-        image: waterfallImg,
-        description: 'Caminata y baño en cataratas escondidas.'
-    },
-    {
-        id: 'monkey-tour',
-        name: 'Monkey Tour',
-        price: 100,
-        category: 'Naturaleza',
-        image: monkeyTourImg,
-        description: 'Encuentro cercano con la vida silvestre local.'
-    },
-    {
-        id: 'zipline',
-        name: 'Zipline Canopy',
-        price: 60,
-        category: 'Aventura',
-        image: ziplineImg,
-        description: 'Adrenalina pura volando sobre la copa de los árboles.'
-    },
-    {
-        id: 'paragliding',
-        name: 'Paragliding',
-        price: 130,
-        category: 'Aventura',
-        image: paraglidingImg,
-        description: 'Vuela alto y disfruta de vistas panorámicas incomparables.'
-    },
-    {
-        id: 'crocodile',
-        name: 'Crocodile Tour',
-        price: 45,
-        category: 'Naturaleza',
-        image: crocodileImg,
-        description: 'Aventura segura observando cocodrilos en su hábitat.'
-    },
-    {
-        id: 'horseback',
-        name: 'Cabalgata en la Playa',
-        price: 60,
-        category: 'Aventura',
-        image: 'https://images.unsplash.com/photo-1598974357801-cbca100e65d3?q=80&w=2574', // Using a valid placeholder for now
-        description: 'Nuestro tour estrella al atardecer o por la mañana.'
-    },
-    {
-        id: 'sunset-boat',
-        name: 'Sunset Private Boat',
-        price: 250,
-        category: 'Agua',
-        image: sunsetBoatImg,
-        description: 'Lujo y relajación con un atardecer inolvidable en el mar.'
-    },
-    {
-        id: 'tortuga-public',
-        name: 'Isla Tortuga (Public)',
-        price: 158,
-        category: 'Agua',
-        image: islaTortugaImg,
-        description: 'Tour en catamarán con todo incluido a Isla Tortuga.'
-    },
-    {
-        id: 'tortuga-private',
-        name: 'Isla Tortuga (Private)',
-        price: 125,
-        category: 'Agua',
-        image: islaTortugaImg,
-        description: 'Experiencia exclusiva en bote privado a la isla.'
-    },
-    {
-        id: 'jetski',
-        name: 'Jetski Tour',
-        price: 120,
-        category: 'Agua',
-        image: jetskiImg,
-        description: 'Velocidad y emoción rompiendo las olas.'
-    },
-    {
-        id: 'fishing',
-        name: 'Sport Fishing',
-        price: 450,
-        category: 'Agua',
-        image: fishingImg,
-        description: 'Pesca deportiva en alta mar con equipo profesional.'
-    },
-    {
-        id: 'atv-2h',
-        name: 'ATV Jungle Tour (2hrs)',
-        price: 75,
-        category: 'Aventura',
-        image: atvJungleImg,
-        description: 'Recorre senderos de montaña y barro en cuadraciclo.'
-    },
-    {
-        id: 'atv-3h',
-        name: 'ATV Waterfall (3hrs)',
-        price: 110,
-        category: 'Aventura',
-        image: atvWaterfallImg,
-        description: 'Tour extendido en ATV visitando cataratas.'
-    },
-    {
-        id: 'kayak',
-        name: 'Sea Kayak',
-        price: 115,
-        category: 'Agua',
-        image: kayakImg,
-        description: 'Rema tranquilamente explorando la costa.'
-    },
-    {
-        id: 'snorkel',
-        name: 'Snorkel Tour',
-        price: 50,
-        category: 'Agua',
-        image: snorkelImg,
-        description: 'Descubre la vida marina bajo aguas cristalinas.'
-    },
-    {
-        id: 'chocolate',
-        name: 'Chocolate Tour',
-        price: 45,
-        category: 'Cultura',
-        image: chocolateImg,
-        description: 'Deliciosa experiencia aprendiendo sobre el cacao local.'
-    },
-    {
-        id: 'bird',
-        name: 'Bird Watching',
-        price: 100,
-        category: 'Naturaleza',
-        image: birdImg,
-        description: 'Avistamiento de especies exóticas con guías expertos.'
-    },
-    {
-        id: 'canyoning',
-        name: 'Extreme Canyoning',
-        price: 90,
-        category: 'Aventura',
-        image: canyoningImg,
-        description: 'Rappel y descenso de cañones para los más valientes.'
-    }
+const toursData = [
+    { id: 'manuel-antonio', price: 100, category: 'nature', image: manuelAntonioImg },
+    { id: 'waterfall', price: 70, category: 'nature', image: waterfallImg },
+    { id: 'monkey-tour', price: 100, category: 'nature', image: monkeyTourImg },
+    { id: 'zipline', price: 60, category: 'adventure', image: ziplineImg },
+    { id: 'paragliding', price: 130, category: 'adventure', image: paraglidingImg },
+    { id: 'crocodile', price: 45, category: 'nature', image: crocodileImg },
+    { id: 'horseback', price: 60, category: 'adventure', image: 'https://images.unsplash.com/photo-1598974357801-cbca100e65d3?q=80&w=2574' },
+    { id: 'sunset-boat', price: 250, category: 'water', image: sunsetBoatImg },
+    { id: 'tortuga-public', price: 158, category: 'water', image: islaTortugaImg },
+    { id: 'jetski', price: 120, category: 'water', image: jetskiImg },
+    { id: 'fishing', price: 450, category: 'water', image: fishingImg },
+    { id: 'atv-2h', price: 75, category: 'adventure', image: atvJungleImg },
+    { id: 'kayak', price: 115, category: 'water', image: kayakImg },
+    { id: 'snorkel', price: 80, category: 'water', image: snorkelImg },
+    { id: 'chocolate', price: 45, category: 'culture', image: chocolateImg },
+    { id: 'canyoning', price: 90, category: 'adventure', image: canyoningImg },
+    { id: 'sup-paddle', price: 85, category: 'adventure', image: paddleExpImg },
+    { id: 'cooking-class', price: 60, category: 'other', image: cookingClassImg },
+    { id: 'surf-lesson', price: 55, category: 'water', image: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&q=80&w=800' },
+    { id: 'ocean-hiking', price: 30, category: 'nature', image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=800' },
+    { id: 'airport-transfer', price: 90, category: 'other', image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800' },
+    { id: 'night-hiking', price: 60, category: 'adventure', image: 'https://images.unsplash.com/photo-1533240332313-0dbdd31cddad?auto=format&fit=crop&q=80&w=800' }
 ];
 
-export const categories = ['Todos', 'Aventura', 'Naturaleza', 'Agua', 'Cultura'];
+export const categories = ['all', 'adventure', 'nature', 'water', 'culture', 'other'];
 
 const Features = () => {
-    const [selectedCategory, setSelectedCategory] = useState('Todos');
+    const { t } = useTranslation();
+    const [selectedCategory, setSelectedCategory] = useState('all');
     const [selectedTour, setSelectedTour] = useState(null);
 
     useEffect(() => {
@@ -193,7 +67,16 @@ const Features = () => {
         return () => window.removeEventListener('switchCategory', handleCategoryChange);
     }, []);
 
-    const filteredTours = selectedCategory === 'Todos'
+    // Merge static data with translations
+    const tours = toursData.map(tour => ({
+        ...tour,
+        name: t(`tours.${tour.id}.name`),
+        description: t(`tours.${tour.id}.description`),
+        longDescription: t(`tours.${tour.id}.longDescription`),
+        duration: t(`tours.${tour.id}.duration`)
+    }));
+
+    const filteredTours = selectedCategory === 'all'
         ? tours
         : tours.filter(tour => tour.category === selectedCategory);
 
@@ -204,13 +87,13 @@ const Features = () => {
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <span className="text-brand-600 font-bold tracking-wider uppercase text-sm mb-4 block">
-                        Descubre Costa Rica
+                        {t('features.header.subtitle')}
                     </span>
                     <h2 className="text-4xl lg:text-5xl font-display font-bold text-gray-900 leading-tight mb-6">
-                        Tours y Actividades Inolvidables
+                        {t('features.header.title')}
                     </h2>
                     <p className="text-gray-500 text-lg">
-                        Elige tu próxima gran historia. Desde la adrenalina de la montaña hasta la calma del océano, tenemos la experiencia perfecta para ti.
+                        {t('features.header.description')}
                     </p>
                 </div>
 
@@ -225,7 +108,7 @@ const Features = () => {
                                 : 'bg-white text-gray-600 border-transparent hover:border-gray-200 hover:bg-gray-100'
                                 }`}
                         >
-                            {cat}
+                            {t(`features.categories.${cat}`)}
                         </button>
                     ))}
                 </div>
@@ -255,7 +138,7 @@ const Features = () => {
                                     />
                                     <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gray-900 flex items-center gap-1 shadow-sm">
                                         <Tag className="w-3 h-3 text-brand-500" />
-                                        {tour.category}
+                                        {t(`features.categories.${tour.category}`)}
                                     </div>
                                 </div>
 
@@ -266,19 +149,26 @@ const Features = () => {
                                         </h3>
                                     </div>
 
+                                    {tour.duration && (
+                                        <div className="flex items-center gap-2 mb-3 text-sm text-gray-500 font-medium">
+                                            <Clock className="w-4 h-4 text-brand-500" />
+                                            <span>{tour.duration}</span>
+                                        </div>
+                                    )}
+
                                     <p className="text-gray-500 text-sm mb-6 flex-grow">
                                         {tour.description}
                                     </p>
 
                                     <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                                         <div>
-                                            <span className="text-xs text-gray-400 block uppercase tracking-wider">Precio</span>
+                                            <span className="text-xs text-gray-400 block uppercase tracking-wider">{t('features.card.price')}</span>
                                             <span className="text-xl font-bold text-brand-600">${tour.price}</span>
                                         </div>
 
                                         <button
                                             className="bg-gray-900 hover:bg-brand-600 text-white p-3 rounded-full transition-colors shadow-lg hover:shadow-brand-500/30 flex items-center justify-center group/btn"
-                                            aria-label={`Reservar ${tour.name}`}
+                                            aria-label={t('features.card.book_aria') + ` ${tour.name}`}
                                         >
                                             <MessageCircle className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
                                         </button>
@@ -292,7 +182,7 @@ const Features = () => {
                 {/* Footer Note */}
                 <div className="mt-16 text-center">
                     <p className="text-gray-400 text-sm">
-                        * Precios sujetos a cambios. Contáctanos para grupos grandes o paquetes personalizados.
+                        {t('features.footer.note')}
                     </p>
                 </div>
 

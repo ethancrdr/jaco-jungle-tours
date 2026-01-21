@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Star, Send } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const ReviewForm = ({ isOpen, onClose, onSubmit }) => {
+    const { t } = useTranslation();
     const [name, setName] = useState('');
     const [location, setLocation] = useState('');
     const [rating, setRating] = useState(5);
@@ -57,8 +59,8 @@ const ReviewForm = ({ isOpen, onClose, onSubmit }) => {
                         <X size={20} />
                     </button>
 
-                    <h3 className="text-2xl font-bold font-display text-gray-900 mb-2">¡Cuéntanos tu experiencia!</h3>
-                    <p className="text-gray-500 text-sm mb-6">Tu opinión nos ayuda a mejorar y a otros viajeros a decidir.</p>
+                    <h3 className="text-2xl font-bold font-display text-gray-900 mb-2">{t('reviewForm.title')}</h3>
+                    <p className="text-gray-500 text-sm mb-6">{t('reviewForm.subtitle')}</p>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
                         {/* Rating */}
@@ -85,37 +87,37 @@ const ReviewForm = ({ isOpen, onClose, onSubmit }) => {
 
                         {/* Inputs */}
                         <div>
-                            <label className="block text-sm font-bold text-gray-700 mb-1">Nombre</label>
+                            <label className="block text-sm font-bold text-gray-700 mb-1">{t('reviewForm.name_label')}</label>
                             <input
                                 type="text"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 className="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all text-sm"
-                                placeholder="Tu nombre"
+                                placeholder={t('reviewForm.name_placeholder')}
                                 required
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-bold text-gray-700 mb-1">País / Ciudad <span className="font-normal text-gray-400">(Opcional)</span></label>
+                            <label className="block text-sm font-bold text-gray-700 mb-1">{t('reviewForm.location_label')} <span className="font-normal text-gray-400">{t('reviewForm.location_optional')}</span></label>
                             <input
                                 type="text"
                                 value={location}
                                 onChange={(e) => setLocation(e.target.value)}
                                 className="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all text-sm"
-                                placeholder="Ej: Costa Rica"
+                                placeholder={t('reviewForm.location_placeholder')}
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-bold text-gray-700 mb-1">Actividad Realizada</label>
+                            <label className="block text-sm font-bold text-gray-700 mb-1">{t('reviewForm.activity_label')}</label>
                             <select
                                 value={activity}
                                 onChange={(e) => setActivity(e.target.value)}
                                 className="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all text-sm bg-white"
                                 required
                             >
-                                <option value="">Selecciona una actividad...</option>
+                                <option value="">{t('reviewForm.activity_placeholder')}</option>
                                 <option value="Paseo al Atardecer">Paseo al Atardecer</option>
                                 <option value="ATV Waterfall Adventure">ATV Waterfall Adventure</option>
                                 <option value="Isla Tortuga Catamarán">Isla Tortuga Catamarán</option>
@@ -123,13 +125,13 @@ const ReviewForm = ({ isOpen, onClose, onSubmit }) => {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-bold text-gray-700 mb-1">Comentario</label>
+                            <label className="block text-sm font-bold text-gray-700 mb-1">{t('reviewForm.comment_label')}</label>
                             <textarea
                                 value={comment}
                                 onChange={(e) => setComment(e.target.value)}
                                 rows={4}
                                 className="w-full p-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all text-sm resize-none"
-                                placeholder="¿Qué fue lo que más te gustó?"
+                                placeholder={t('reviewForm.comment_placeholder')}
                                 required
                             />
                         </div>
@@ -139,7 +141,7 @@ const ReviewForm = ({ isOpen, onClose, onSubmit }) => {
                             className="w-full pym-4 bg-brand-900 text-white rounded-xl font-bold py-3 hover:bg-brand-800 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-brand-900/20"
                         >
                             <Send size={18} />
-                            Publicar Reseña
+                            {t('reviewForm.submit_btn')}
                         </button>
                     </form>
                 </motion.div>

@@ -3,8 +3,10 @@ import { motion } from 'framer-motion';
 import { Star, Quote, MessageSquarePlus } from 'lucide-react';
 import { useReviews } from '../hooks/useReviews';
 import ReviewForm from './ReviewForm';
+import { useTranslation } from 'react-i18next';
 
 const Testimonials = () => {
+    const { t } = useTranslation();
     const { reviews, addReview } = useReviews();
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [visibleCount, setVisibleCount] = useState(6);
@@ -14,11 +16,11 @@ const Testimonials = () => {
     const formattedRating = averageRating.toFixed(1);
 
     const getRatingLabel = (score) => {
-        if (score >= 9.5) return "Excepcional";
-        if (score >= 9.0) return "Fantástico";
-        if (score >= 8.0) return "Muy Bien";
-        if (score >= 7.0) return "Bien";
-        return "Puntuación";
+        if (score >= 9.5) return t('testimonials.ratings.exceptional');
+        if (score >= 9.0) return t('testimonials.ratings.fantastic');
+        if (score >= 8.0) return t('testimonials.ratings.very_good');
+        if (score >= 7.0) return t('testimonials.ratings.good');
+        return t('testimonials.ratings.score');
     };
 
     const header = (
@@ -30,15 +32,15 @@ const Testimonials = () => {
                     viewport={{ once: true }}
                     className="text-4xl font-display font-bold mb-2"
                 >
-                    Comentarios de huéspedes
+                    {t('testimonials.title')}
                 </motion.h2>
-                <p className="text-xl text-gray-300">Descubre qué dicen nuestros aventureros</p>
+                <p className="text-xl text-gray-300">{t('testimonials.subtitle')}</p>
             </div>
 
             <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm px-6 py-4 rounded-xl border border-white/10">
                 <div className="text-right">
                     <div className="text-2xl font-bold leading-none">{getRatingLabel(averageRating)}</div>
-                    <div className="text-sm text-gray-300">{reviews.length} comentarios</div>
+                    <div className="text-sm text-gray-300">{t('testimonials.reviews_count', { count: reviews.length })}</div>
                 </div>
                 <div className="bg-accent-500 text-brand-900 font-bold text-xl w-12 h-12 flex items-center justify-center rounded-lg rounded-tr-none text-white">
                     {formattedRating}
@@ -110,7 +112,7 @@ const Testimonials = () => {
                             onClick={() => setVisibleCount(prev => prev + 3)}
                             className="px-6 py-2 border border-white/30 rounded-full text-white text-sm hover:bg-white/10 transition-all font-medium"
                         >
-                            Ver más comentarios
+                            {t('testimonials.show_more')}
                         </button>
                     )}
                     {visibleCount > 6 && (
@@ -118,7 +120,7 @@ const Testimonials = () => {
                             onClick={() => setVisibleCount(6)}
                             className="px-6 py-2 border border-white/30 rounded-full text-white text-sm hover:bg-white/10 transition-all font-medium"
                         >
-                            Ver menos
+                            {t('testimonials.show_less')}
                         </button>
                     )}
                 </div>
@@ -129,7 +131,7 @@ const Testimonials = () => {
                         className="px-8 py-3 bg-accent-500 text-white rounded font-bold hover:bg-accent-600 transition-all flex items-center gap-2 mx-auto"
                     >
                         <MessageSquarePlus size={20} />
-                        Escribir un comentario
+                        {t('testimonials.write_review')}
                     </button>
                 </div>
 

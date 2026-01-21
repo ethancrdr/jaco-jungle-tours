@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { categories } from './Features';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
@@ -42,16 +45,16 @@ const Navbar = () => {
         <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'}`}>
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <a href="#" className="text-2xl font-display font-bold text-gray-900">
-                    Jaco<span className="text-brand-500">JungleTours</span>
+                    Jaco<span className="text-brand-500">Tours</span>
                 </a>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center space-x-8">
+                <div className="hidden md:flex items-center space-x-6">
                     <a
                         href="#home"
                         className="font-medium transition-colors hover:text-brand-500 text-gray-700"
                     >
-                        Home
+                        {t('nav.home')}
                     </a>
 
                     {/* Tours Dropdown */}
@@ -63,7 +66,7 @@ const Navbar = () => {
                         <button
                             className="flex items-center gap-1 font-medium transition-colors hover:text-brand-500 text-gray-700"
                         >
-                            Tours <ChevronDown size={16} />
+                            {t('nav.tours')} <ChevronDown size={16} />
                         </button>
 
                         <AnimatePresence>
@@ -80,7 +83,7 @@ const Navbar = () => {
                                             onClick={() => handleCategoryClick(cat)}
                                             className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors text-sm"
                                         >
-                                            {cat}
+                                            {t(`features.categories.${cat}`)}
                                         </button>
                                     ))}
                                 </motion.div>
@@ -92,16 +95,27 @@ const Navbar = () => {
                         href="#experience"
                         className="font-medium transition-colors hover:text-brand-500 text-gray-700"
                     >
-                        Experience
+                        {t('nav.testimonials')}
                     </a>
 
                     <a
-                        href="https://wa.me/50687076353"
-                        className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-bold transition-transform hover:scale-105 ${isScrolled ? 'bg-brand-500 text-white' : 'bg-white text-brand-600'}`}
+                        href="#contact"
+                        className="font-medium transition-colors hover:text-brand-500 text-gray-700"
                     >
-                        <Phone size={18} />
-                        Reservar
+                        {t('nav.contact')}
                     </a>
+
+                    <div className="flex items-center gap-4 pl-4 border-l border-gray-200">
+                        <LanguageSwitcher />
+
+                        <a
+                            href="https://wa.me/50687076353"
+                            className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-bold transition-transform hover:scale-105 ${isScrolled ? 'bg-brand-500 text-white' : 'bg-white text-brand-600'}`}
+                        >
+                            <Phone size={18} />
+                            {t('nav.book')}
+                        </a>
+                    </div>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -127,12 +141,12 @@ const Navbar = () => {
                             className="text-gray-800 text-lg font-medium hover:text-brand-500"
                             onClick={() => setIsOpen(false)}
                         >
-                            Home
+                            {t('nav.home')}
                         </a>
 
                         {/* Mobile Tours List */}
                         <div className="w-full px-10">
-                            <p className="text-center text-gray-400 text-sm uppercase tracking-wider mb-4 font-bold">Categorías de Tours</p>
+                            <p className="text-center text-gray-400 text-sm uppercase tracking-wider mb-4 font-bold">{t('nav.tours')}</p>
                             <div className="grid grid-cols-2 gap-3">
                                 {categories.map((cat) => (
                                     <button
@@ -140,7 +154,7 @@ const Navbar = () => {
                                         onClick={() => handleCategoryClick(cat)}
                                         className="text-center p-2 bg-gray-50 rounded-lg text-gray-700 text-sm hover:bg-brand-50 hover:text-brand-600 transition-colors"
                                     >
-                                        {cat}
+                                        {t(`features.categories.${cat}`)}
                                     </button>
                                 ))}
                             </div>
@@ -151,16 +165,28 @@ const Navbar = () => {
                             className="text-gray-800 text-lg font-medium hover:text-brand-500"
                             onClick={() => setIsOpen(false)}
                         >
-                            Experience
+                            {t('nav.testimonials')}
                         </a>
 
                         <a
-                            href="https://wa.me/50687076353"
-                            className="flex items-center gap-2 px-6 py-3 bg-brand-500 text-white rounded-full font-bold"
+                            href="#contact"
+                            className="text-gray-800 text-lg font-medium hover:text-brand-500"
+                            onClick={() => setIsOpen(false)}
                         >
-                            <Phone size={20} />
-                            Chat WhatsApp
+                            {t('nav.contact')}
                         </a>
+
+                        <div className="flex flex-col items-center gap-4">
+                            <LanguageSwitcher />
+
+                            <a
+                                href="https://wa.me/50687076353"
+                                className="flex items-center gap-2 px-6 py-3 bg-brand-500 text-white rounded-full font-bold"
+                            >
+                                <Phone size={20} />
+                                {t('nav.book')}
+                            </a>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

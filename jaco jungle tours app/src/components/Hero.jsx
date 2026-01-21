@@ -1,11 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import privateSunsetImg from '../assets/tours/sunset-private-boat.jpg';
 import atvWaterfallImg from '../assets/tours/atv-waterfall.jpg';
 
 const Hero = () => {
+    const { t } = useTranslation();
+
     return (
         <section id="home" className="min-h-screen flex items-center bg-brand-50 relative overflow-hidden pt-20">
             <div className="container mx-auto px-6">
@@ -19,16 +22,16 @@ const Hero = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <span className="inline-block py-2 px-4 rounded-full bg-white border border-brand-100 text-brand-600 text-sm font-bold tracking-wide uppercase mb-8 shadow-sm">
-                                Tu Aventura Comienza Aquí
+                                {t('hero.tagline')}
                             </span>
 
                             <h1 className="text-5xl lg:text-7xl font-display font-bold text-gray-900 leading-[1.1] mb-8">
-                                Descubre <br />
-                                <span className="text-brand-500">Lo Inexplorado.</span>
+                                {t('hero.title_start')} <br />
+                                <span className="text-brand-500">{t('hero.title_end')}</span>
                             </h1>
 
                             <p className="text-lg text-gray-600 mb-10 max-w-lg leading-relaxed">
-                                Desde la adrenalina de los rápidos y ATVs hasta la serenidad de nuestras playas y montañas. JacoJungleTours es tu puerta a la verdadera Costa Rica.
+                                {t('hero.subtitle')}
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4">
@@ -36,28 +39,28 @@ const Hero = () => {
                                     href="#tours"
                                     className="px-8 py-4 bg-gray-900 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gray-800 transition-all shadow-lg shadow-gray-900/20"
                                 >
-                                    Ver Todos los Tours <ArrowRight size={20} />
+                                    {t('hero.cta_tours')} <ArrowRight size={20} />
                                 </a>
                                 <a
                                     href="https://wa.me/50687076353"
                                     className="px-8 py-4 bg-white text-gray-900 border border-gray-200 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2"
                                 >
-                                    Contactar Guía
+                                    {t('hero.cta_contact')}
                                 </a>
                             </div>
 
                             <div className="mt-12 flex items-center gap-8 text-gray-500 text-sm font-medium">
                                 <div className="flex items-center gap-2">
                                     <div className="w-1 h-1 bg-brand-500 rounded-full" />
-                                    Aventuras Seguras
+                                    {t('hero.badge_safe')}
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <div className="w-1 h-1 bg-brand-500 rounded-full" />
-                                    Transporte Incluido
+                                    {t('hero.badge_transport')}
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <div className="w-1 h-1 bg-brand-500 rounded-full" />
-                                    Mejores Precios
+                                    {t('hero.badge_price')}
                                 </div>
                             </div>
                         </motion.div>
